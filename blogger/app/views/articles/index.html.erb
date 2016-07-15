@@ -1,9 +1,15 @@
 <h1>The whole shebang</h1>
-
+<h2> <%= link_to "See All Tags", tags_path %> </h2>
 <ul id="articles">
 <% @articles.each do |article| %>
 	<li>
 		<%= link_to article.title, article_path(article), class: 'article_title' %>
+		<p>
+		Tags: 
+		<% article.tags.each do |tag| %>
+			<%= link_to tag.name, tag_path(tag) %>
+		<% end %>
+		</p>
 	</li>
 <% end %>
 </ul>
