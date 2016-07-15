@@ -13,5 +13,6 @@
 	</li>
 <% end %>
 </ul>
-
+<% if logged_in? %>
 <%= link_to "Create a New Post", new_article_path, class: 'new_article' %>
+<% end %>
